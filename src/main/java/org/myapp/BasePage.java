@@ -1,10 +1,12 @@
 package org.myapp;
 
-/**
- * Hello world!
- */
-public class App {
-    public static void main(String[] args) {
-        System.out.println("Hello World!");
+import org.openqa.selenium.WebDriver;
+
+public class BasePage {
+    protected WebDriver driver;
+
+    public BasePage(WebDriver driver) {
+        this.driver = driver;
     }
+
 }

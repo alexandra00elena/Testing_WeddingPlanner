@@ -1,4 +1,4 @@
 package org.myapp;
 
-public class SignUpTests {
+public class SignUpTests extends BaseTest{
 }

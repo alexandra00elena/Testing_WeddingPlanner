@@ -1,18 +1,24 @@
 package org.myapp;
 
-import org.testng.Assert;
-import org.testng.annotations.Test;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.*;
+import io.github.bonigarcia.wdm.WebDriverManager;
 
-/**
- * Unit test for simple App.
- */
-public class AppTest {
+public class BaseTest {
+    protected WebDriver driver;
+    protected static final String baseUrl = "file:///Users/alexandra/Documents/WeddingPlanner";
 
-    /**
-     * Rigorous Test :-)
-     */
-    @Test
-    public void shouldAnswerWithTrue() {
-        Assert.assertTrue(true);
+    @BeforeMethod
+    public void setUp() {
+        driver = new ChromeDriver();
+        driver.manage().window().maximize();
+    }
+
+    @AfterMethod
+    public void tearDown() {
+        if (driver != null) {
+            driver.quit();
+        }
     }
 }
